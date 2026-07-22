@@ -5,115 +5,191 @@ import MainLayout from '../layouts/MainLayout.astro';
   <!-- Hero -->
   <section class="hero">
     <div class="container">
-      <h1>The Ultimate Resource for Planning High School Sports Celebrations</h1>
-      <p>Free expert guides, checklists, and decoration ideas for sports banquets, senior nights, award ceremonies, and graduation parties. Built for coaches, by people who get it.</p>
+      <h1>Everything You Need to Plan <span class="highlight">Unforgettable</span> Athletic Celebrations</h1>
+      <p>Free expert guides, checklists, and decoration ideas for sports banquets, senior nights, award ceremonies, and graduation parties — built for coaches, by people who've been there.</p>
       <div class="hero-cta">
-        <a href="/banquet-planning/" class="btn btn-primary">Start Planning Your Banquet →</a>
-        <a href="#guides" class="btn btn-secondary">Browse All Guides</a>
+        <a href="/banquet-planning/" class="btn btn-primary">Start Planning Your Banquet</a>
+        <a href="#guides" class="btn btn-secondary">Explore All Guides</a>
       </div>
     </div>
   </section>
 
-  <!-- Intro -->
-  <section>
+  <!-- Stats Strip -->
+  <section style="padding:2.5rem 0;background:var(--bg-white);border-bottom:1px solid var(--border);">
     <div class="container">
-      <h2>Everything You Need to Plan an Unforgettable Athletic Celebration</h2>
-      <p style="text-align:center;max-width:700px;margin:0 auto 1rem;color:var(--text-light);">
-        Whether you're a coach, booster club parent, athletic director, or team mom — you've come to the right place. This isn't a store. It's a library of practical, field-tested planning resources built specifically for high school athletics.
-      </p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.5rem;text-align:center;">
+        <div><div style="font-size:2rem;font-weight:800;color:var(--primary);">10+</div><div class="text-sm text-muted">Free Planning Guides</div></div>
+        <div><div style="font-size:2rem;font-weight:800;color:var(--primary);">20+</div><div class="text-sm text-muted">Sports Covered</div></div>
+        <div><div style="font-size:2rem;font-weight:800;color:var(--primary);">8</div><div class="text-sm text-muted">Week Planning Timeline</div></div>
+        <div><div style="font-size:2rem;font-weight:800;color:var(--primary);">100%</div><div class="text-sm text-muted">Free Resources</div></div>
+      </div>
     </div>
   </section>
 
   <!-- Guide Cards -->
-  <section id="guides" style="padding-top:0;">
+  <section id="guides">
     <div class="container">
-      <h2>Four Key Events, One Trusted Resource</h2>
+      <h2>Your Complete Celebration Toolkit</h2>
+      <p class="section-subtitle">Four essential guides covering every type of high school athletic celebration, from team banquets to graduation parties.</p>
       <div class="card-grid">
         <div class="card">
-          <h3>🏆 Sports Banquet Guide</h3>
-          <p>Venue selection, menu planning, program structure, seating arrangements, and centerpiece ideas. The complete playbook.</p>
+          <div class="card-icon">🏆</div>
+          <h3>Sports Banquet Guide</h3>
+          <p>Venue selection, menu planning, program structure, seating arrangements, and centerpiece ideas. The complete playbook for a successful banquet.</p>
           <a href="/banquet-planning/" class="card-link">Read the Guide →</a>
         </div>
         <div class="card">
-          <h3>⭐ Senior Night Guide</h3>
-          <p>Ceremony scripts, parent speech templates, senior gift ideas, and special moments that make the night unforgettable.</p>
+          <div class="card-icon">⭐</div>
+          <h3>Senior Night Guide</h3>
+          <p>Ceremony scripts, parent speech templates, senior gift ideas, and the special moments that make the night unforgettable for seniors and families.</p>
           <a href="/senior-night/" class="card-link">Plan Senior Night →</a>
         </div>
         <div class="card">
-          <h3>🎓 Graduation Party Guide</h3>
-          <p>Themes, catering, decorations, photo booth setups, and party flow planning for your graduate's celebration.</p>
+          <div class="card-icon">🎓</div>
+          <h3>Graduation Party Guide</h3>
+          <p>Themes, catering, decorations, photo booth setups, and party flow planning for your graduate's special celebration.</p>
           <a href="/graduation-party/" class="card-link">Party Planning →</a>
         </div>
         <div class="card">
-          <h3>🏅 Award Ceremony Guide</h3>
-          <p>Award categories, presentation order, coach awards, and creating moments that matter for every athlete.</p>
+          <div class="card-icon">🏅</div>
+          <h3>Award Ceremony Guide</h3>
+          <p>Award categories, presentation order, coach awards, and creating meaningful moments that recognize every athlete's contribution.</p>
           <a href="/award-ceremony/" class="card-link">Ceremony Planning →</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Decoration Section -->
-  <section style="background:var(--bg-white);">
+  <!-- Centerpiece Section -->
+  <section class="section-alt">
     <div class="container">
       <h2>Make Your Tables Unforgettable</h2>
-      <p style="text-align:center;max-width:650px;margin:0 auto 1.5rem;color:var(--text-light);">
-        The centerpiece is the heart of every banquet table. Custom 3D printed sports centerpieces capture your team's identity in a way generic decorations never can.
-      </p>
+      <p class="section-subtitle">The right centerpiece transforms a banquet table. Custom 3D printed sports centerpieces capture your team's identity in a way generic decorations never can.</p>
       <div class="card-grid">
         <div class="card">
-          <h3>🏈 Football Centerpieces</h3>
-          <p>Available in multiple sizes — 8.75", 11.5", and 12" footballs in your team colors with optional personalization.</p>
-          <a href="https://lakeshore-gift.myshopify.com/products/football-graduation-centerpiece-8-3-4-football" class="card-link" target="_blank">View Options →</a>
+          <div class="card-icon">🏈</div>
+          <h3>Football</h3>
+          <p>8.75", 11.5", and 12" footballs in team colors with optional personalization.</p>
+          <a href="https://lakeshore-gift.myshopify.com/products/football-graduation-centerpiece-8-3-4-football" class="card-link" target="_blank">Browse Options →</a>
         </div>
         <div class="card">
-          <h3>🏀 Basketball Centerpieces</h3>
-          <p>7" and 9" basketballs with optional team name and player number personalization. Perfect for banquet tables.</p>
-          <a href="https://lakeshore-gift.myshopify.com/products/basketball-banquet-table-centerpiece-7-ball" class="card-link" target="_blank">View Options →</a>
+          <div class="card-icon">🏀</div>
+          <h3>Basketball</h3>
+          <p>7" and 9" basketballs with team name and player number personalization.</p>
+          <a href="https://lakeshore-gift.myshopify.com/products/basketball-banquet-table-centerpiece-7-ball" class="card-link" target="_blank">Browse Options →</a>
         </div>
         <div class="card">
-          <h3>⚽ Soccer Ball Centerpieces</h3>
-          <p>8" custom soccer balls designed in your team colors with personalization for banquets and graduation parties.</p>
-          <a href="https://lakeshore-gift.myshopify.com/products/custom-soccer-ball-centerpiece-8-soccer-ball-graduation-party-birthday" class="card-link" target="_blank">View Options →</a>
+          <div class="card-icon">⚽</div>
+          <h3>Soccer</h3>
+          <p>8" custom soccer balls designed in your team's colors with personalization.</p>
+          <a href="https://lakeshore-gift.myshopify.com/products/custom-soccer-ball-centerpiece-8-soccer-ball-graduation-party-birthday" class="card-link" target="_blank">Browse Options →</a>
         </div>
         <div class="card">
-          <h3>🏐 Volleyball Centerpieces</h3>
-          <p>8" volleyball centerpieces with team personalization. Available in multiple color options for your program.</p>
-          <a href="https://lakeshore-gift.myshopify.com/products/volleyball-banquet-table-centerpiece-8-volleyball" class="card-link" target="_blank">View Options →</a>
+          <div class="card-icon">🏐</div>
+          <h3>Volleyball</h3>
+          <p>8" volleyball centerpieces with full team personalization in multiple color options.</p>
+          <a href="https://lakeshore-gift.myshopify.com/products/volleyball-banquet-table-centerpiece-8-volleyball" class="card-link" target="_blank">Browse Options →</a>
         </div>
         <div class="card">
-          <h3>📣 Cheerleading Centerpieces</h3>
-          <p>Megaphones, pom poms, and cheer awards — custom 3D printed in your squad's colors. Great for banquet tables.</p>
-          <a href="https://lakeshore-gift.myshopify.com/products/cheerleader-megaphone-cheer-banquet-table-centerpiece-cheerleading" class="card-link" target="_blank">View Options →</a>
+          <div class="card-icon">📣</div>
+          <h3>Cheerleading</h3>
+          <p>Megaphones and pom pom centerpieces in your squad's colors.</p>
+          <a href="https://lakeshore-gift.myshopify.com/products/cheerleader-megaphone-cheer-banquet-table-centerpiece-cheerleading" class="card-link" target="_blank">Browse Options →</a>
         </div>
         <div class="card">
-          <h3>🏃 Track & Field Centerpieces</h3>
-          <p>Flying track shoes, high jump, hurdles, long jump, and javelin centerpieces for track banquets and graduation.</p>
-          <a href="https://lakeshore-gift.myshopify.com/products/flying-track-shoe-track-shoe-with-wings-banquet-table-centerpiece" class="card-link" target="_blank">View Options →</a>
+          <div class="card-icon">🏃</div>
+          <h3>Track & Field</h3>
+          <p>Flying track shoes, hurdles, jumps, and javelin designs for track banquets.</p>
+          <a href="https://lakeshore-gift.myshopify.com/products/flying-track-shoe-track-shoe-with-wings-banquet-table-centerpiece" class="card-link" target="_blank">Browse Options →</a>
+        </div>
+        <div class="card">
+          <div class="card-icon">🏒</div>
+          <h3>Hockey</h3>
+          <p>Jagged edge player outlines and puck displays in team colors.</p>
+          <a href="https://lakeshore-gift.myshopify.com/products/hockey-player-centerpiece-unique-jagged-edge-outline-3d-printed-sports-display-8" class="card-link" target="_blank">Browse Options →</a>
+        </div>
+        <div class="card">
+          <div class="card-icon">⚾</div>
+          <h3>More Sports</h3>
+          <p>Browse our full collection of custom centerpieces for every sport.</p>
+          <a href="https://lakeshore-gift.myshopify.com/collections/all" class="card-link" target="_blank">Shop All Centerpieces →</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Free Tools -->
+  <!-- Sport-Specific Guides -->
   <section>
     <div class="container">
-      <h2>Free Planning Tools to Save You Time</h2>
+      <h2>Sport-by-Sport Banquet Guides</h2>
+      <p class="section-subtitle">Every sport has its own traditions and culture. Our sport-specific guides help you plan a celebration that fits your program.</p>
+      <div class="feature-grid">
+        <a href="/sports/football/" class="feature-card" style="text-decoration:none;color:inherit;">
+          <div class="icon-circle">🏈</div>
+          <h3>Football Banquets</h3>
+          <p class="text-sm text-muted">Large team logistics, senior night ceremonies, football decoration themes</p>
+        </a>
+        <a href="/sports/basketball/" class="feature-card" style="text-decoration:none;color:inherit;">
+          <div class="icon-circle">🏀</div>
+          <h3>Basketball Banquets</h3>
+          <p class="text-sm text-muted">Intimate team celebrations, hardwood decor, program traditions</p>
+        </a>
+        <a href="/sports/soccer/" class="feature-card" style="text-decoration:none;color:inherit;">
+          <div class="icon-circle">⚽</div>
+          <h3>Soccer Banquets</h3>
+          <p class="text-sm text-muted">Community-style events, combined boys/girls programs</p>
+        </a>
+        <a href="/sports/volleyball/" class="feature-card" style="text-decoration:none;color:inherit;">
+          <div class="icon-circle">🏐</div>
+          <h3>Volleyball Banquets</h3>
+          <p class="text-sm text-muted">Small team celebrations, senior night traditions</p>
+        </a>
+        <a href="/sports/track/" class="feature-card" style="text-decoration:none;color:inherit;">
+          <div class="icon-circle">🏃</div>
+          <h3>Track & Field</h3>
+          <p class="text-sm text-muted">Large team awards, event group recognition</p>
+        </a>
+        <a href="/sports/cheer/" class="feature-card" style="text-decoration:none;color:inherit;">
+          <div class="icon-circle">📣</div>
+          <h3>Cheerleading</h3>
+          <p class="text-sm text-muted">Squad-only celebrations, stunt group awards</p>
+        </a>
+      </div>
+      <div class="text-center mt-2">
+        <a href="/banquet-planning/" class="btn btn-primary">View All Sport Guides →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Free Tools -->
+  <section class="section-alt">
+    <div class="container">
+      <h2>Free Planning Tools</h2>
+      <p class="section-subtitle">Save time and stay organized with our downloadable resources.</p>
       <div class="card-grid">
         <div class="card">
-          <h3>📋 Banquet Checklist</h3>
-          <p>Printable 8-week timeline checklist. Know exactly what to do and when.</p>
+          <div class="card-icon">📋</div>
+          <h3>Printable Banquet Checklist</h3>
+          <p>Complete 8-week timeline checklist. Print it, share it with your committee, check items off as you go.</p>
           <a href="/checklist/" class="card-link">Get the Checklist →</a>
         </div>
         <div class="card">
-          <h3>❓ Frequently Asked Questions</h3>
-          <p>Quick answers to the most common banquet planning questions.</p>
-          <a href="/faq/" class="card-link">Browse FAQs →</a>
+          <div class="card-icon">💰</div>
+          <h3>Budget Worksheet</h3>
+          <p>Track every expense from venue to centerpieces. Includes average costs and a grand total summary.</p>
+          <a href="/checklist/budget/" class="card-link">Download Worksheet →</a>
         </div>
         <div class="card">
-          <h3>🎨 Decoration Ideas</h3>
-          <p>Budget-friendly to premium decoration options for every type of celebration.</p>
-          <a href="/decorations/" class="card-link">Explore Ideas →</a>
+          <div class="card-icon">🪑</div>
+          <h3>Seating Chart Templates</h3>
+          <p>Three seating strategies plus a printable template. Find the right setup for your event.</p>
+          <a href="/checklist/seating/" class="card-link">See Templates →</a>
+        </div>
+        <div class="card">
+          <div class="card-icon">❓</div>
+          <h3>Frequently Asked Questions</h3>
+          <p>Quick answers to the most common banquet planning questions, curated from real coaches.</p>
+          <a href="/faq/" class="card-link">Browse FAQs →</a>
         </div>
       </div>
     </div>
@@ -133,13 +209,14 @@ import MainLayout from '../layouts/MainLayout.astro';
     </div>
   </section>
 
-  <!-- Breadcrumb Schema -->
+  <!-- Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "SportsBanquetGuide.com",
-    "url": "https://sportsbanquetguide.com"
+    "url": "https://sportsbanquetguide.com",
+    "description": "Free guides and resources for planning high school sports banquets, senior nights, award ceremonies, and graduation parties."
   }
   </script>
 </MainLayout>
