@@ -1,0 +1,408 @@
+---
+// Main Layout - SportsBanquetGuide.com
+export interface Props {
+  title: string;
+  description: string;
+}
+const { title, description } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title} | SportsBanquetGuide.com</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={Astro.url.href} />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content={`${title} | SportsBanquetGuide.com`} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={Astro.url.href} />
+  <meta property="og:site_name" content="SportsBanquetGuide.com" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={`${title} | SportsBanquetGuide.com`} />
+  <meta name="twitter:description" content={description} />
+
+  <!-- Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "SportsBanquetGuide.com",
+    "url": "https://sportsbanquetguide.com",
+    "description": "The internet's most comprehensive resource for planning high school sports banquets, senior nights, athletic award ceremonies, and graduation celebrations."
+  })} />
+
+  <style>
+    /* === RESET & BASE === */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --primary: #1a365d;
+      --primary-light: #2b6cb0;
+      --accent: #e53e3e;
+      --accent-light: #fc8181;
+      --gold: #d69e2e;
+      --bg: #f7fafc;
+      --bg-white: #ffffff;
+      --text: #2d3748;
+      --text-light: #718096;
+      --border: #e2e8f0;
+      --radius: 8px;
+      --shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+      --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+    a { color: var(--primary-light); text-decoration: none; }
+    a:hover { color: var(--accent); text-decoration: underline; }
+    img { max-width: 100%; height: auto; border-radius: var(--radius); }
+
+    /* === NAVIGATION === */
+    nav {
+      background: var(--primary);
+      color: white;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow);
+    }
+    nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    nav .logo {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: white;
+    }
+    nav .logo:hover { color: var(--gold); text-decoration: none; }
+    nav .logo span { color: var(--gold); }
+    .nav-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .nav-links a {
+      color: rgba(255,255,255,0.85);
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    .nav-links a:hover { color: var(--gold); text-decoration: none; }
+    .mobile-menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* === CONTAINER === */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* === HERO === */
+    .hero {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      color: white;
+      padding: 4rem 0 3rem;
+      text-align: center;
+    }
+    .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; line-height: 1.2; }
+    .hero p { font-size: 1.15rem; max-width: 700px; margin: 0 auto 1.5rem; opacity: 0.9; line-height: 1.6; }
+    .hero-cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem; }
+
+    /* === BUTTONS === */
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.75rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: none;
+    }
+    .btn-primary { background: var(--accent); color: white; }
+    .btn-primary:hover { background: #c53030; transform: translateY(-1px); text-decoration: none; color: white; }
+    .btn-secondary { background: rgba(255,255,255,0.15); color: white; backdrop-filter: blur(4px); }
+    .btn-secondary:hover { background: rgba(255,255,255,0.25); transform: translateY(-1px); text-decoration: none; color: white; }
+    .btn-outline {
+      background: transparent;
+      color: var(--primary-light);
+      border: 2px solid var(--primary-light);
+    }
+    .btn-outline:hover { background: var(--primary-light); color: white; text-decoration: none; }
+
+    /* === SECTIONS === */
+    section { padding: 3rem 0; }
+    section h2 {
+      font-size: 1.8rem;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    section h3 {
+      font-size: 1.25rem;
+      color: var(--primary);
+      margin: 1.5rem 0 0.75rem;
+    }
+
+    /* === CARDS === */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .card {
+      background: var(--bg-white);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+    .card h3 { margin-top: 0; font-size: 1.1rem; }
+    .card p { font-size: 0.92rem; color: var(--text-light); margin: 0.5rem 0 1rem; }
+    .card .card-link { color: var(--accent); font-weight: 600; font-size: 0.9rem; }
+
+    /* === CONTENT PAGES === */
+    .page-content {
+      background: var(--bg-white);
+      padding: 3rem 1.5rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin: 2rem 0;
+    }
+    .page-content h1 {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+    .page-content h2 {
+      font-size: 1.5rem;
+      margin: 2rem 0 1rem;
+      text-align: left;
+    }
+    .page-content h3 {
+      font-size: 1.2rem;
+      margin: 1.5rem 0 0.75rem;
+    }
+    .page-content p { margin-bottom: 1rem; line-height: 1.7; }
+    .page-content ul, .page-content ol { margin: 0.5rem 0 1rem 1.5rem; }
+    .page-content li { margin-bottom: 0.4rem; }
+    .page-content blockquote {
+      border-left: 4px solid var(--gold);
+      padding: 0.75rem 1.5rem;
+      margin: 1.5rem 0;
+      background: #fffbeb;
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+
+    /* === PRODUCT RECOMMENDATION === */
+    .product-note {
+      background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+      border: 1px solid #f6e05e;
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .product-note p { margin-bottom: 0.5rem; }
+    .product-note .btn { margin-top: 0.5rem; }
+
+    /* === PAGE HEADER (non-home) === */
+    .page-header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      color: white;
+      padding: 2.5rem 0;
+      text-align: center;
+    }
+    .page-header h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+    .page-header p { opacity: 0.9; max-width: 600px; margin: 0 auto; }
+
+    /* === CHECKLIST === */
+    .checklist-item {
+      display: flex;
+      gap: 0.75rem;
+      padding: 0.5rem 0;
+      align-items: flex-start;
+    }
+    .checklist-item input[type="checkbox"] {
+      margin-top: 0.3rem;
+      width: 1.1rem;
+      height: 1.1rem;
+      accent-color: var(--primary);
+    }
+
+    /* === FAQ === */
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 0;
+    }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-item h3 {
+      color: var(--primary);
+      margin: 0 0 0.5rem;
+      font-size: 1.05rem;
+      cursor: pointer;
+    }
+    .faq-item h3:hover { color: var(--accent); }
+
+    /* === BREADCRUMBS === */
+    .breadcrumbs {
+      padding: 1rem 0;
+      font-size: 0.85rem;
+      color: var(--text-light);
+    }
+    .breadcrumbs a { color: var(--text-light); }
+    .breadcrumbs a:hover { color: var(--primary-light); }
+    .breadcrumbs span { margin: 0 0.3rem; }
+
+    /* === FOOTER === */
+    footer {
+      background: var(--primary);
+      color: rgba(255,255,255,0.8);
+      padding: 3rem 0 1.5rem;
+      margin-top: 3rem;
+    }
+    footer .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    footer h4 { color: white; font-size: 1rem; margin-bottom: 1rem; }
+    footer a { color: rgba(255,255,255,0.7); font-size: 0.9rem; display: block; margin-bottom: 0.4rem; }
+    footer a:hover { color: var(--gold); text-decoration: none; }
+    footer .copyright {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 1.5rem;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+
+    /* === EMAIL CAPTURE === */
+    .email-capture {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      color: white;
+      padding: 2.5rem;
+      border-radius: var(--radius);
+      text-align: center;
+      margin: 2rem 0;
+    }
+    .email-capture h3 { color: white; margin-top: 0; font-size: 1.3rem; }
+    .email-capture p { opacity: 0.9; margin-bottom: 1rem; }
+    .email-capture form {
+      display: flex;
+      gap: 0.75rem;
+      max-width: 450px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .email-capture input {
+      flex: 1;
+      min-width: 200px;
+      padding: 0.75rem 1rem;
+      border: none;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      outline: none;
+    }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 768px) {
+      .mobile-menu-toggle { display: block; }
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(255,255,255,0.1);
+      }
+      .nav-links.show { display: flex; }
+      .hero h1 { font-size: 1.8rem; }
+      .hero p { font-size: 1rem; }
+      section h2 { font-size: 1.5rem; }
+      .page-content h1 { font-size: 1.6rem; }
+      .card-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Skip to content -->
+  <a href="#main-content" style="position:absolute;left:-9999px;top:-9999px;background:white;padding:0.5rem;z-index:999">Skip to content</a>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="container">
+      <a href="/" class="logo">🏆 Sports<span>Banquet</span>Guide</a>
+      <button class="mobile-menu-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-links').classList.toggle('show')">☰</button>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/banquet-planning/">Banquet Guide</a>
+        <a href="/senior-night/">Senior Night</a>
+        <a href="/graduation-party/">Graduation</a>
+        <a href="/award-ceremony/">Awards</a>
+        <a href="/decorations/">Decorations</a>
+        <a href="/faq/">FAQ</a>
+        <a href="/contact/">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <slot />
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>🏆 SportsBanquetGuide</h4>
+          <p style="font-size:0.9rem; margin-bottom:0.5rem;">The internet's most trusted resource for planning high school sports celebrations.</p>
+        </div>
+        <div>
+          <h4>Guides</h4>
+          <a href="/banquet-planning/">Sports Banquet Planning</a>
+          <a href="/senior-night/">Senior Night Guide</a>
+          <a href="/graduation-party/">Graduation Party Guide</a>
+          <a href="/award-ceremony/">Award Ceremony Guide</a>
+          <a href="/decorations/">Decoration Ideas</a>
+        </div>
+        <div>
+          <h4>Resources</h4>
+          <a href="/checklist/">Banquet Checklist</a>
+          <a href="/faq/">FAQ</a>
+          <a href="/blog/">Blog</a>
+          <a href="/about/">About Us</a>
+          <a href="/contact/">Contact</a>
+        </div>
+        <div>
+          <h4>Shop</h4>
+          <a href="https://lakeshore-gift.myshopify.com/collections/all" target="_blank">Custom Centerpieces</a>
+          <a href="https://lakeshore-gift.myshopify.com/" target="_blank">Lakeshore Gift Store</a>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2026 SportsBanquetGuide.com. All rights reserved. A Lakeshore Gift resource.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
