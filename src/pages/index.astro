@@ -5,31 +5,37 @@ import MainLayout from '../layouts/MainLayout.astro';
   <!-- Hero -->
   <section class="hero">
     <div class="container">
+      <div class="hero-badge">🎯 Free Resources for Team Moms, Teachers & Coaches</div>
       <h1>Everything You Need to Plan <span class="highlight">Unforgettable</span> Athletic Celebrations</h1>
-      <p>Free expert guides, checklists, and decoration ideas for sports banquets, senior nights, award ceremonies, and graduation parties — built for coaches, by people who've been there.</p>
+      <p>Expert guides, checklists, and decoration ideas for sports banquets, senior nights, award ceremonies, and graduation parties — all free, all built for you.</p>
       <div class="hero-cta">
         <a href="/banquet-planning/" class="btn btn-primary">Start Planning Your Banquet</a>
         <a href="#guides" class="btn btn-secondary">Explore All Guides</a>
       </div>
-    </div>
-  </section>
-
-  <!-- Stats Strip -->
-  <section style="padding:2.5rem 0;background:var(--bg-white);border-bottom:1px solid var(--border);">
-    <div class="container">
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.5rem;text-align:center;">
-        <div><div style="font-size:2rem;font-weight:800;color:var(--primary);">10+</div><div class="text-sm text-muted">Free Planning Guides</div></div>
-        <div><div style="font-size:2rem;font-weight:800;color:var(--primary);">20+</div><div class="text-sm text-muted">Sports Covered</div></div>
-        <div><div style="font-size:2rem;font-weight:800;color:var(--primary);">8</div><div class="text-sm text-muted">Week Planning Timeline</div></div>
-        <div><div style="font-size:2rem;font-weight:800;color:var(--primary);">100%</div><div class="text-sm text-muted">Free Resources</div></div>
+      <div class="hero-strip">
+        <div class="hero-strip-item">
+          <span class="num">10+</span>
+          <span class="label">Free Guides</span>
+        </div>
+        <div class="hero-strip-item">
+          <span class="num">8</span>
+          <span class="label">Sports</span>
+        </div>
+        <div class="hero-strip-item">
+          <span class="num">100%</span>
+          <span class="label">Free</span>
+        </div>
       </div>
     </div>
   </section>
 
+
+
   <!-- Guide Cards -->
-  <section id="guides">
+  <section id="guides" class="section-guide-bg">
     <div class="container">
-      <h2>Your Complete Celebration Toolkit</h2>
+      <h2><span class="section-emoji">📖</span>Your Complete Celebration Toolkit</h2>
+      <div class="section-title-underline"></div>
       <p class="section-subtitle">Four essential guides covering every type of high school athletic celebration, from team banquets to graduation parties.</p>
       <div class="card-grid">
         <div class="card">
@@ -60,10 +66,13 @@ import MainLayout from '../layouts/MainLayout.astro';
     </div>
   </section>
 
+  <div class="section-divider"><span>✨</span></div>
+
   <!-- Centerpiece Section -->
-  <section class="section-alt">
+  <section class="section-warm-bg">
     <div class="container">
-      <h2>Make Your Tables Unforgettable</h2>
+      <h2><span class="section-emoji">🏺</span>Make Your Tables Unforgettable</h2>
+      <div class="section-title-underline"></div>
       <p class="section-subtitle">The right centerpiece transforms a banquet table. Custom 3D printed sports centerpieces capture your team's identity in a way generic decorations never can.</p>
       <div class="card-grid">
         <div class="card">
@@ -118,10 +127,13 @@ import MainLayout from '../layouts/MainLayout.astro';
     </div>
   </section>
 
+  <div class="section-divider"><span>🏅</span></div>
+
   <!-- Sport-Specific Guides -->
-  <section>
+  <section class="section-alt">
     <div class="container">
-      <h2>Sport-by-Sport Banquet Guides</h2>
+      <h2><span class="section-emoji">🏅</span>Sport-by-Sport Banquet Guides</h2>
+      <div class="section-title-underline"></div>
       <p class="section-subtitle">Every sport has its own traditions and culture. Our sport-specific guides help you plan a celebration that fits your program.</p>
       <div class="feature-grid">
         <a href="/sports/football/" class="feature-card" style="text-decoration:none;color:inherit;">
@@ -161,10 +173,13 @@ import MainLayout from '../layouts/MainLayout.astro';
     </div>
   </section>
 
+  <div class="section-divider"><span>🛠️</span></div>
+
   <!-- Free Tools -->
-  <section class="section-alt">
+  <section>
     <div class="container">
-      <h2>Free Planning Tools</h2>
+      <h2><span class="section-emoji">🛠️</span>Free Planning Tools</h2>
+      <div class="section-title-underline"></div>
       <p class="section-subtitle">Save time and stay organized with our downloadable resources.</p>
       <div class="card-grid">
         <div class="card">
@@ -220,3 +235,6 @@ import MainLayout from '../layouts/MainLayout.astro';
   }
   </script>
 </MainLayout>
+
+
+
